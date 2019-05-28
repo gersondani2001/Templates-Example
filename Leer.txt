@@ -1,0 +1,54 @@
+estructura basica:
+-css
+-img
+-js
+-lib
+-resource
+-templates
+-index
+-readme
+-gulp
+-node-modules
+
+
+cada es para funcionamiento de un sitio web
+
+
+con librerias integradas y iconos tambien bootstrap,jquery,angular y gulp servidor local
+
+
+para instalar gulp
+
+
+npm install -g gulp
+
+npm install --global gulp-cli
+
+
+
+/*este codigo ya tiene que ir ubicada dentro de la carpeta de la pagina web*/
+
+npm install --save-dev gulp
+
+cuando tengas el codigo gulpfile.js
+
+
+pones esto
+
+
+npm install browser-sync gulp --save-dev
+
+y despues en tu carpeta colocas esto
+
+C:\Users\Home\Desktop\Templates-Example>gulp
+
+gulp para que te ejecute y te vuelva un localhost en el navegador
+
+
+
+solo descomprime los node_modules y ya siiiiii 
+
+
+
+
+
