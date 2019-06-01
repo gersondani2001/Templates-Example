@@ -7,3 +7,16 @@ body{
 	-o-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 }
+
+.navBar{
+	height: 80px;
+	background: #F1524F;
+}
+.pokelite{
+	color: #FFF;
+	font-stretch: condensed;
+	font-size: 50px;
+	font-weight: bold;
+	font-family: 'Oswald', sans-serif;
+
+}

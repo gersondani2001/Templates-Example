@@ -1,6 +1,6 @@
 <!--codigo de index principal html extructura principal-->
 <!doctype html>
-<html lang="en" dir="rtl" ng-app="app">
+<html lang="en" dir="rtl" ng-app="pokeapilite">
   <head>
 
   	<!--hosted libraries-->
@@ -12,26 +12,71 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-	<link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+  	<link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
 
-	<!--link principal de css-->
-	<link rel="stylesheet" href="css/style.css">
+  	<!--link principal de css-->
+  	<link rel="stylesheet" href="css/style.css">
 
-	<!--link de css de iconos icomoon free-->
-	<link rel="stylesheet" href="resource/fonts/style.css">
+  	<!--link de css de iconos icomoon free-->
+  	<link rel="stylesheet" href="resource/fonts/style.css">
+
+    <!--fonts google-->
+    <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
 
 
-	<!--icono para la pestaña-->
-	<link rel="icon" href="img/html.png">
 
-    <title>Hello, world!</title>
+  	<!--icono para la pestaña-->
+  	<link rel="icon" href="img/html.png">
+
+    <title>Pokemon</title>
 
 
   </head>
   <body ng-controller="appCtrl">
 
 
-    <h1>Hello, world! <span class="ico icon-home"></span></h1>
+    <div class="container-fluid navBar">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <span class="pokelite">PokeLite</span>
+        </div>
+      </div>
+
+    </div>
+   <br>
+
+<input type="text" ng-model="nomP">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>Abilite</th>            
+                <th>ID</th>
+                <th>Pokemon</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="i in Pokeapi | filter: nomP">
+                <td class="danger">
+                  <img src="{{i.data.sprites.front_default}} ">
+                </td>
+                <td class="success">
+                  <h3>{{i.data.id}}</h3>
+                </td>
+                <td class="info text-center">
+                  <h3>Pokemon: {{i.data.name}}</h3>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+
 
 
 
@@ -44,6 +89,9 @@
     <script src="lib/bootstrap/js/bootstrap.min.js"></script>
     <script src="js/script.js"></script>
 
+
+
+<!--este codigo es de gerson daniel boche peralta -->
 
   </body>
 </html>
