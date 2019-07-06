@@ -14,19 +14,23 @@ $(document).ready(function(){
 */
 
 
-var app = angular.module("pokeapilite",[])
-app.controller("appCtrl",function($scope,$rootScope,$http){
-	console.log("Angular.js")
-	console.log("JavaScript.js")
+var app = angular.module("clima",[])
+app.controller("climaCtrl",function($scope,$rootScope,$http){
 
-	$scope.Pokeapi = [];
-	for (var x = 1; x < 500; x++) {
+
+	$scope.sendData= function(x){
+		$scope.ciudad = x;
+		$scope.info= [];
 		$http({
 			method : "GET",
-			url : "https://pokeapi.co/api/v2/pokemon/" + x
+			url : "https://api.openweathermap.org/data/2.5/weather?q=".concat($scope.ciudad,'&appid=c1129a468f87761d13fb4d459a89b087')
 		}).then(function(snapshot){
-			$scope.Pokeapi.push(snapshot);
+			$scope.info.push(snapshot);
+			console.log(snapshot);
 		})		
-		console.log($scope.Pokeapi);
 	}
+
+		
+
+
 });

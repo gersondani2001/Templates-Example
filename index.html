@@ -1,6 +1,6 @@
 <!--codigo de index principal html extructura principal-->
 <!doctype html>
-<html lang="en" dir="rtl" ng-app="pokeapilite">
+<html lang="en" dir="rtl" ng-app="clima">
   <head>
 
   	<!--hosted libraries-->
@@ -28,53 +28,38 @@
   	<!--icono para la pestaña-->
   	<link rel="icon" href="img/html.png">
 
-    <title>Pokemon</title>
+    <title>Open Weather Api.</title>
 
 
   </head>
-  <body ng-controller="appCtrl">
+  <body ng-controller="climaCtrl">
 
 
-    <div class="container-fluid navBar">
+
+    <div class="container-fluid">
       <div class="row">
-        <div class="col-md-12 text-center">
-          <span class="pokelite">PokeLite</span>
+        <form>
+          <input ng-model="x">
+          <button class="btn btn-danger" ng-click="sendData(x)">Clima.</button>
+        </form>
+        <div class="clima" ng-repeat="c in info">
+          <p>Clima en: {{c.data.name}}, {{c.data.sys.country}} </p>
+          <p>Temperatura: {{c.data.main.temp}}° </p>
+          <p>Temperatura Maxima: {{c.data.main.temp_max}}° </p>
+          <p>Temperatura Minima: {{c.data.main.temp_min}}° </p>
+          <p>Presion: {{c.data.main.pressure}}Hpa </p>
+          <p>Humedad: {{c.data.main.humidity}}% </p>
+          <p>Localizacion:{{c.data.coord.lon}},{{c.data.coord.lat}}m. </p>
         </div>
-      </div>
 
-    </div>
-   <br>
 
-<input type="text" ng-model="nomP">
 
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <table class="table table-bordered">
-            <thead>
-              <tr>
-                <th>Abilite</th>            
-                <th>ID</th>
-                <th>Pokemon</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr ng-repeat="i in Pokeapi | filter: nomP">
-                <td class="danger">
-                  <img src="{{i.data.sprites.front_default}} ">
-                </td>
-                <td class="success">
-                  <h3>{{i.data.id}}</h3>
-                </td>
-                <td class="info text-center">
-                  <h3>Pokemon: {{i.data.name}}</h3>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+
       </div>
     </div>
+
+
+
 
 
 
